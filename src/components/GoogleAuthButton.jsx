@@ -69,22 +69,6 @@ export default function GoogleAuthButton({ role = 'student', text = 'Continue wi
     }
   }
 
-  useEffect(() => {
-    // Check if Google Identity Services SDK is loaded
-    if (typeof window !== 'undefined' && window.google?.accounts?.id && googleClientId) {
-      try {
-        window.google.accounts.id.initialize({
-          client_id: googleClientId,
-          callback: onGoogleCredentialResponse,
-          auto_select: false,
-          cancel_on_tap_outside: true
-        })
-        setGisLoaded(true)
-      } catch (e) {
-        console.warn('Google Identity Services init notice:', e.message)
-      }
-    }
-  }, [googleClientId, role])
 
   const handleContinueWithGoogle = () => {
     // Direct navigation to Google Account Chooser screen (bypasses origin mismatch)

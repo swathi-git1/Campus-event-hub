@@ -28,6 +28,14 @@ export default function GoogleAccountChooser() {
   // Recognized Google accounts for Campus Event Hub
   const accounts = [
     {
+      name: 'Gomathi S',
+      email: '24104001@nec.edu.in',
+      role: 'student',
+      roleLabel: 'NEC Institutional Account',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=80',
+      badgeColor: '#1a73e8'
+    },
+    {
       name: 'Ananya Rao',
       email: 'student@college.edu',
       role: 'student',
@@ -93,53 +101,6 @@ export default function GoogleAccountChooser() {
     }
   }
 
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.google?.accounts?.id && googleClientId) {
-      try {
-        window.google.accounts.id.initialize({
-          client_id: googleClientId,
-          callback: async (response) => {
-            if (response?.credential) {
-              setLoading(true)
-              setFormError('')
-              try {
-                const res = await api.loginWithGoogle({
-                  credential: response.credential,
-                  rolePreference: location.state?.rolePreference || 'student'
-                })
-                if (res && res.success) {
-                  completeAuth(res)
-                  return
-                }
-              } catch (err) {
-                // Backend not connected, parse credential or fall back
-              }
-              const fallbackRes = loginWithGoogleProfile({
-                name: 'Google Scholar',
-                email: 'scholar@college.edu',
-                role: location.state?.rolePreference || 'student'
-              })
-              completeAuth(fallbackRes)
-            }
-          },
-          auto_select: false
-        })
-
-        if (gisBtnRef.current) {
-          window.google.accounts.id.renderButton(gisBtnRef.current, {
-            theme: 'outline',
-            size: 'large',
-            width: 380,
-            text: 'continue_with',
-            shape: 'rectangular'
-          })
-          setHasOfficialGis(true)
-        }
-      } catch (err) {
-        console.warn('Google Identity Services init notice:', err.message)
-      }
-    }
-  }, [googleClientId, location.state])
 
   const handleSelectAccount = async (account) => {
     setLoading(true)
@@ -291,17 +252,6 @@ export default function GoogleAccountChooser() {
         {/* View 1: Real-world Google Account Chooser List */}
         {!showCustomForm ? (
           <>
-            {/* Official Google Identity Services SDK Render Target */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 16 }}>
-              <div ref={gisBtnRef} style={{ width: '100%', display: 'flex', justifyContent: 'center' }} />
-              {hasOfficialGis && (
-                <div style={{ width: '100%', display: 'flex', alignItems: 'center', margin: '14px 0 6px', gap: 10 }}>
-                  <span style={{ flex: 1, height: 1, background: '#e2e8f0' }} />
-                  <span style={{ fontSize: 11.5, color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>or choose verified profile</span>
-                  <span style={{ flex: 1, height: 1, background: '#e2e8f0' }} />
-                </div>
-              )}
-            </div>
 
             <div className="google-account-list-container">
               {accounts.map((acc) => {
