@@ -1,0 +1,60 @@
+{
+  "page": {
+    "size": "A4",
+    "width_pt": 595.3,
+    "height_pt": 841.9,
+    "top_margin_pt": 72.0,
+    "bottom_margin_pt": 72.0,
+    "left_margin_pt": 72.0,
+    "right_margin_pt": 72.0,
+    "border": {
+      "val": "single",
+      "color": "000000",
+      "sz": 6,
+      "space": 24,
+      "offsetFrom": "page"
+    },
+    "page_number": {
+      "alignment": "CENTER",
+      "inside_border": true,
+      "font": "Times New Roman",
+      "size_pt": 11
+    }
+  },
+  "typography": {
+    "font_family": "Times New Roman",
+    "fallback_font": "Liberation Serif",
+    "title_size_pt": 14,
+    "chapter_size_pt": 16,
+    "section_size_pt": 13,
+    "subsection_size_pt": 12,
+    "body_size_pt": 12,
+    "caption_size_pt": 11,
+    "table_header_size_pt": 10,
+    "table_cell_size_pt": 9.5,
+    "body_line_spacing": 1.18,
+    "body_alignment": "JUSTIFY"
+  },
+  "tables": {
+    "border_color": "000000",
+    "border_sz": 4,
+    "border_val": "single",
+    "header_shading": "F2F2F2",
+    "header_bold": true,
+    "caption_position": "above",
+    "caption_format": "bold Times New Roman"
+  },
+  "figures": {
+    "caption_position": "below",
+    "caption_format": "italic centered Times New Roman",
+    "dpi": 300
+  },
+  "module_order": [
+    "Screenshots & Interface Explanations",
+    "Purpose & Scope",
+    "Functional Requirements",
+    "Non-Functional Requirements",
+    "API Design",
+    "DB Design"
+  ]
+}

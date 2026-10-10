@@ -1,0 +1,936 @@
+/* ==========================================================================
+   COLLEGE ADMINISTRATION PORTAL - AUTHENTICATION STYLES
+   Sandal (Warm Beige) Theme // Elegant, Modern & Premium
+   Left: Deep Roasted Dark Walnut (#2C1810) with Warm Caramel Accents
+   Right: Warm Sandal Canvas (#F7F2E9) with Pure Warm Ivory Card (#FFFDF9)
+   ========================================================================== */
+
+/* Overall Page Shell */
+.admin-portal-shell,
+.portal-shell {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   LEFT COLUMN — BRAND & ADMINISTRATIVE CONTEXT (approx. 42% width)
+   Deep warm roasted dark walnut with subtle golden grid & caramel accents
+   ========================================================================== */
+.admin-portal-left,
+.portal-left {
+  flex: 0 0 42%;
+  max-width: 42%;
+  min-height: 100vh;
+  background: #2C1810;
+  color: #FFFDF9;
+  border-right: 1px solid rgba(212, 155, 106, 0.2);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Subtle background grid pattern with warm caramel sheen */
+.admin-portal-left::before,
+.portal-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(212, 155, 106, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 155, 106, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.admin-left-top,
+.admin-left-mid,
+.admin-left-bottom,
+.portal-left-top,
+.portal-left-mid,
+.portal-left-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand header */
+.admin-brand-link,
+.portal-brand-wrap {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* Left Context Details */
+.admin-context-eyebrow,
+.portal-context-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #D49B6A;
+  margin-bottom: 16px;
+}
+
+.admin-eyebrow-sq,
+.portal-eyebrow-sq {
+  width: 6px;
+  height: 6px;
+  background: #C27E43;
+  border-radius: 1.5px;
+  box-shadow: 0 0 6px rgba(194, 126, 67, 0.8);
+}
+
+.admin-context-headline,
+.portal-context-headline {
+  font-size: 32px;
+  line-height: 1.22;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFDF9;
+  margin: 0 0 16px;
+}
+
+.admin-context-body,
+.portal-context-body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #D8C7B5;
+  margin: 0 0 32px;
+  max-width: 440px;
+}
+
+/* ONE Single Clean Visual Module for Statistics & Workflow */
+.admin-stat-module,
+.portal-stat-module {
+  background: rgba(38, 20, 13, 0.72);
+  border: 1px solid rgba(212, 155, 106, 0.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 8px 24px rgba(20, 10, 6, 0.35);
+  max-width: 440px;
+  backdrop-filter: blur(8px);
+}
+
+.admin-stat-header,
+.portal-stat-module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(212, 155, 106, 0.15);
+}
+
+.admin-stat-title,
+.portal-stat-module-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E2D3C1;
+}
+
+.admin-stat-sync {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #D49B6A;
+  font-weight: 600;
+}
+
+.admin-stat-grid,
+.portal-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.admin-stat-item,
+.portal-stat-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.admin-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(212, 155, 106, 0.18);
+}
+
+.admin-stat-val,
+.portal-stat-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFDF9;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.admin-stat-label,
+.portal-stat-label {
+  font-size: 11px;
+  color: #B8A392;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Administrative Workflow Steps Preview */
+.admin-workflow-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212, 155, 106, 0.15);
+}
+
+.admin-workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-step-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 155, 106, 0.2);
+  color: #E2D3C1;
+}
+
+.admin-workflow-step.active .admin-step-badge {
+  background: #C27E43;
+  color: #FFFDF9;
+  box-shadow: 0 0 8px rgba(194, 126, 67, 0.7);
+}
+
+.admin-step-text {
+  font-size: 11px;
+  color: #D8C7B5;
+  font-weight: 500;
+}
+
+.admin-workflow-arrow {
+  color: rgba(212, 155, 106, 0.4);
+  font-size: 12px;
+}
+
+.admin-left-bottom,
+.portal-left-bottom {
+  font-size: 11.5px;
+  color: #9C8573;
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-status-dot,
+.portal-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C27E43;
+  box-shadow: 0 0 6px rgba(194, 126, 67, 0.8);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN — LOGIN CARD & QUICK DEMO (approx. 58% width)
+   Warm Sandal Canvas (#F7F2E9) with Pure Warm Ivory Card (#FFFDF9)
+   ========================================================================== */
+.admin-portal-right,
+.portal-right {
+  flex: 0 0 58%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background-color: var(--bg);
+  box-sizing: border-box;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-card-container,
+.portal-card-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* The Clean Elevated Warm Ivory Form Card */
+.admin-login-card,
+.portal-login-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 38px 36px 32px;
+  box-shadow: 
+    0 4px 6px -1px rgba(60, 36, 18, 0.04), 
+    0 16px 28px -4px rgba(60, 36, 18, 0.08),
+    0 0 0 1px rgba(229, 218, 203, 0.6);
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 1. Eyebrow Label */
+.admin-eyebrow,
+.portal-eyebrow {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #A5602A;
+  background: #F3EAE0;
+  border: 1px solid #E5DACB;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* 2. Login Heading */
+.admin-heading,
+.portal-heading {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #2C1810;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+/* 3. Supporting Description */
+.admin-desc,
+.portal-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #6A4E38;
+  margin: 0 0 24px;
+}
+
+/* Error Banner */
+.admin-error-banner,
+.portal-error-banner {
+  background: #FFF1F0;
+  border: 1px solid #F5C2C0;
+  color: #9E2A2B;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 4. & 5. Form Field Groups */
+.admin-field-group,
+.portal-field-group {
+  margin-bottom: 18px;
+}
+
+.admin-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.admin-label,
+.portal-field-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #3E2314;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.admin-label-row .admin-label {
+  margin-bottom: 0;
+}
+
+.admin-req {
+  color: #C27E43;
+  font-weight: 700;
+}
+
+.admin-forgot-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  color: #A5602A;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.admin-forgot-btn:hover {
+  color: #8C4E18;
+  text-decoration: underline;
+}
+
+.admin-input-wrap,
+.portal-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-input-icon,
+.portal-input-icon {
+  position: absolute;
+  left: 12px;
+  width: 17px;
+  height: 17px;
+  color: #8C705B;
+  pointer-events: none;
+}
+
+.admin-input,
+.portal-input {
+  width: 100%;
+  height: 46px;
+  border: 1.5px solid #DACAB8;
+  border-radius: 8px;
+  padding: 10px 14px 10px 38px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #FAF6F0;
+  color: #2C1810;
+  box-sizing: border-box;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-input:focus,
+.portal-input:focus {
+  outline: none;
+  background: #FFFFFF;
+  border-color: #C27E43;
+  box-shadow: 0 0 0 3.5px rgba(194, 126, 67, 0.16);
+}
+
+.admin-input::placeholder,
+.portal-input::placeholder {
+  color: #A8917D;
+}
+
+.admin-eye-btn,
+.portal-reveal-btn {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #8C705B;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: color 0.15s ease;
+}
+
+.admin-eye-btn:hover,
+.portal-reveal-btn:hover {
+  color: #2C1810;
+}
+
+/* 6. Primary Login Button (Warm Caramel / Sandal Gradient) */
+.admin-btn-primary,
+.portal-btn-primary,
+.portal-submit-btn {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #C27E43 0%, #A5602A 100%);
+  color: #FFFDF9;
+  font-size: 14.5px;
+  font-weight: 600;
+  border: 1px solid rgba(165, 96, 42, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(165, 96, 42, 0.32);
+}
+
+.admin-btn-primary:hover,
+.portal-btn-primary:hover,
+.portal-submit-btn:hover {
+  background: linear-gradient(135deg, #CF8C50 0%, #B26B33 100%);
+  border-color: #B26B33;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(165, 96, 42, 0.42);
+}
+
+.admin-btn-primary:active,
+.portal-btn-primary:active,
+.portal-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(165, 96, 42, 0.3);
+}
+
+.admin-btn-arrow {
+  transition: transform 0.18s ease;
+}
+
+.admin-btn-primary:hover .admin-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* 7. Alternative Authentication (OAuth / SSO) Section */
+.admin-oauth-divider,
+.portal-oauth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-line,
+.portal-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #E5DACB;
+}
+
+.admin-divider-text,
+.portal-divider-text {
+  font-size: 11px;
+  color: #8C705B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.admin-oauth-grid,
+.portal-oauth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.admin-oauth-btn,
+.portal-oauth-btn {
+  height: 42px;
+  background: #FFFDF9;
+  border: 1px solid #DACAB8;
+  border-radius: 8px;
+  color: #3E2314;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.admin-oauth-btn:hover,
+.portal-oauth-btn:hover {
+  background: #F5ECE0;
+  border-color: #C27E43;
+  color: #2C1810;
+}
+
+/* 8. Security Message Box */
+.admin-security-box,
+.portal-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #5E412E;
+  background: #F8F3EC;
+  border: 1px solid #E5DACB;
+  border-radius: 8px;
+  padding: 11px 14px;
+  margin-bottom: 22px;
+}
+
+.admin-security-box svg,
+.portal-security-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #C27E43;
+  width: 15px;
+  height: 15px;
+}
+
+/* 9. Secondary Navigation Links */
+.admin-secondary-nav,
+.portal-secondary-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6A4E38;
+  text-align: center;
+}
+
+.admin-nav-item {
+  line-height: 1.4;
+}
+
+.admin-link-orange,
+.portal-link {
+  color: #A5602A;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.admin-link-orange:hover,
+.portal-link:hover {
+  color: #8C4E18;
+  text-decoration: underline;
+}
+
+.admin-link-subtle,
+.portal-subtle-link {
+  color: #8C705B;
+  text-decoration: none;
+  font-size: 12.5px;
+  transition: color 0.15s ease;
+}
+
+.admin-link-subtle:hover,
+.portal-subtle-link:hover {
+  color: #2C1810;
+}
+
+.admin-link-teal,
+.portal-admin-link {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #3E2314;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: color 0.15s ease;
+}
+
+.admin-link-teal:hover,
+.portal-admin-link:hover {
+  color: #A5602A;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   QUICK DEMO LOGIN SECTION - REDESIGNED WITH WARM SANDAL AESTHETIC
+   Attractive rounded pill buttons, generous spacing, role icons, and smooth hover
+   ========================================================================== */
+.admin-demo-helper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #FFFDF9;
+  border: 1.5px solid #E5DACB;
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 
+    0 2px 8px -1px rgba(60, 36, 18, 0.05),
+    0 1px 3px rgba(60, 36, 18, 0.03);
+  transition: all 0.2s ease;
+}
+
+.admin-demo-helper:hover {
+  border-color: #D9C7B4;
+  box-shadow: 0 4px 14px rgba(60, 36, 18, 0.08);
+}
+
+.admin-demo-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-demo-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #A5602A;
+  background: #F3EAE0;
+  border: 1px solid #E5DACB;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.admin-demo-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #4A2E1B;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.admin-demo-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Individual Quick Demo Role Button */
+.admin-demo-pill {
+  background: #F3EBE0;
+  border: 1.5px solid #D8C7B4;
+  color: #4A2E1B;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(60, 36, 18, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.admin-demo-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.admin-demo-name {
+  line-height: 1.2;
+}
+
+.admin-demo-pill:hover {
+  background: #EBE0D2;
+  border-color: #C27E43;
+  color: #2C1810;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(194, 126, 67, 0.22);
+}
+
+.admin-demo-pill:active {
+  transform: translateY(0);
+}
+
+/* Active State: Rich Caramel / Amber Gradient with Ivory Text */
+.admin-demo-pill.active {
+  background: linear-gradient(135deg, #B87333 0%, #8C4E18 100%);
+  border-color: #8C4E18;
+  color: #FFFDF7;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(140, 78, 24, 0.35);
+  transform: translateY(-1px);
+}
+
+.admin-demo-active-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFDF7;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  margin-left: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BEHAVIOR
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .admin-portal-left,
+  .portal-left {
+    flex: 0 0 38%;
+    max-width: 38%;
+    padding: 40px 32px;
+  }
+  .admin-portal-right,
+  .portal-right {
+    flex: 0 0 62%;
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 860px) {
+  .admin-portal-shell,
+  .portal-shell {
+    flex-direction: column;
+  }
+  .admin-portal-left,
+  .portal-left {
+    flex: none;
+    max-width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 155, 106, 0.2);
+    padding: 36px 24px 30px;
+  }
+  .admin-context-headline,
+  .portal-context-headline {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .admin-context-body,
+  .portal-context-body {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .admin-stat-module,
+  .portal-stat-module {
+    max-width: 100%;
+  }
+  .admin-left-bottom,
+  .portal-left-bottom {
+    display: none;
+  }
+  .admin-portal-right,
+  .portal-right {
+    flex: none;
+    width: 100%;
+    padding: 32px 20px 48px;
+  }
+  .admin-login-card,
+  .portal-login-card {
+    padding: 28px 22px 24px;
+  }
+  .admin-demo-pills {
+    gap: 8px;
+  }
+  .admin-demo-pill {
+    padding: 7px 13px;
+    font-size: 11.5px;
+  }
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT FOR AUTHENTICATION PORTAL
+   ========================================================================== */
+html[data-theme="dark"] .admin-portal-shell,
+html[data-theme="dark"] .portal-shell {
+  background-color: #121214;
+  color: #F4F4F6;
+}
+
+html[data-theme="dark"] .admin-portal-left,
+html[data-theme="dark"] .portal-left {
+  background: #0F0E13;
+  border-right-color: #2E2E36;
+}
+
+html[data-theme="dark"] .admin-portal-right,
+html[data-theme="dark"] .portal-right {
+  background-color: #121214;
+}
+
+html[data-theme="dark"] .admin-login-card,
+html[data-theme="dark"] .portal-login-card,
+html[data-theme="dark"] .admin-auth-card,
+html[data-theme="dark"] .portal-auth-card {
+  background: #1C1C20;
+  border-color: #2E2E36;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] .admin-card-title,
+html[data-theme="dark"] .portal-card-title,
+html[data-theme="dark"] .admin-auth-title,
+html[data-theme="dark"] .portal-auth-title,
+html[data-theme="dark"] .admin-demo-title,
+html[data-theme="dark"] .admin-label {
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .admin-card-subtitle,
+html[data-theme="dark"] .portal-card-subtitle,
+html[data-theme="dark"] .admin-auth-subtitle,
+html[data-theme="dark"] .portal-auth-subtitle,
+html[data-theme="dark"] .admin-divider-text,
+html[data-theme="dark"] .admin-nav-item,
+html[data-theme="dark"] .admin-link-subtle {
+  color: #A8A8B6;
+}
+
+html[data-theme="dark"] .admin-input {
+  background: #222228;
+  border-color: #3E3E48;
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .admin-input:focus {
+  background: #272730;
+  border-color: #E0924C;
+}
+
+html[data-theme="dark"] .admin-input-icon {
+  color: #9A9AA6;
+}
+
+html[data-theme="dark"] .admin-demo-pill {
+  background: #222228;
+  border-color: #3E3E48;
+  color: #D0D0D7;
+}
+
+html[data-theme="dark"] .admin-demo-pill:hover {
+  background: #2A2A33;
+  color: #FFFFFF;
+  border-color: #E0924C;
+}
+
+html[data-theme="dark"] .admin-demo-pill.active {
+  background: rgba(224, 146, 76, 0.2);
+  border-color: #E0924C;
+  color: #F0B36E;
+}
+
+html[data-theme="dark"] .admin-security-box {
+  background: #222227;
+  border-color: #2E2E36;
+  color: #A8A8B6;
+}
+
