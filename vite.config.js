@@ -9,7 +9,7 @@ export default defineConfig(async ({ command }) => {
   }
 
   return {
-    base: '/Campus-event-hub/',
+    base: '/',
     plugins,
     server: {
       host: true,
