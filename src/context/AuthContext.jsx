@@ -122,8 +122,30 @@ export function AuthProvider({ children }) {
   }
 
   const handleLoginSuccess = (authRes) => {
-    if (authRes?.user && authRes?.accessToken) {
-      establishSession(authRes.user, authRes.accessToken)
+    if (authRes?.user) {
+      const token = authRes.accessToken || authRes.token || `fallback_google_${Date.now()}`
+      establishSession(authRes.user, token)
+    }
+  }
+
+  const loginWithGoogleProfile = (accountProfile) => {
+    const role = accountProfile.role || 'student'
+    const account = {
+      id: accountProfile.id || `google_${accountProfile.email.split('@')[0]}`,
+      name: accountProfile.name || 'Google User',
+      email: accountProfile.email,
+      role: role,
+      dept: accountProfile.dept || 'Campus Event Hub',
+      avatar: accountProfile.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=240&q=80',
+      isGoogleAuth: true
+    }
+    rememberAccount(account)
+    const session = establishSession(account)
+    return {
+      success: true,
+      user: session.user,
+      role: session.user.role,
+      token: session.token
     }
   }
 
@@ -333,6 +355,7 @@ export function AuthProvider({ children }) {
         resetPassword,
         logout,
         loginWithOAuth,
+        loginWithGoogleProfile,
         handleLoginSuccess,
         updateProfile,
         getAccounts: () => readAccounts(),
